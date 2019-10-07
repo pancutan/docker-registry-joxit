@@ -1,0 +1,11 @@
+Si un repositorio se queda en cache, borrarlo manualmente y reiniciar el contenedor
+Ejemplo
+
+1. 
+docker-compose exec registry sh
+rm /data/docker/registry/v2/repositories/alerta_dvr -rf
+exit
+
+2. 
+docker-compose down
+docker-compose up
