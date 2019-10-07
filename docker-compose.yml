@@ -1,0 +1,30 @@
+version: '3'
+services:
+    registry:
+        image: registry:2.7.1
+        restart: unless-stopped
+        ports:
+            - "5000:5000"
+        environment:
+            REGISTRY_STORAGE_FILESYSTEM_ROOTDIRECTORY: /data
+            REGISTRY_STORAGE_DELETE_ENABLED: 'true'
+        volumes:
+            - ./data:/data
+            - ./config.yml:/etc/docker/registry/config.yml
+        networks:
+            - registry-ui-net
+    ui:
+        image: joxit/docker-registry-ui:static
+        restart: unless-stopped
+        ports:
+            - 8090:80
+        environment:
+            - REGISTRY_TITLE=Supercanal
+            - REGISTRY_URL=http://registry:5000
+        depends_on:
+            - registry
+        networks:
+            - registry-ui-net
+
+networks:
+  registry-ui-net:
