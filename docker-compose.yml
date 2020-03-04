@@ -19,7 +19,7 @@ services:
         ports:
             - 8090:80
         environment:
-            - REGISTRY_TITLE=Supercanal
+            - REGISTRY_TITLE=Sergio Repo
             - REGISTRY_URL=http://registry:5000
         depends_on:
             - registry
