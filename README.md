@@ -1,6 +1,8 @@
 # Registry Supercanal con UI
 
-(2019) Copyleft Sergio Alonso para Supercanal SA
+(2020) Copyleft Sergio Alonso para Supercanal SA
+
+Corriendo en Supercanal. Versión final en gitlab-ce interno.
 
 Basado en el trabajo de Joxit et al, https://github.com/Joxit/docker-registry-ui
 
